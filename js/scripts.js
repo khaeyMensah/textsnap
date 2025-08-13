@@ -200,6 +200,7 @@ canvasHeight.addEventListener("input", () => {
 });
 downloadBtn.addEventListener("click", downloadImage);
 
+
 // Initialize
 updateManualControlsVisibility();
 updateRangeValues();
