@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Image Converter</title>
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Text to Image Converter</h1>
+            <p>Transform your text into beautiful images with smart wrapping and mobile-friendly dimensions</p>
+        </div>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="form-group">
+                    <label for="textInput">Your Text</label>
+                    <textarea id="textInput" placeholder="Enter your text here...">This is a longer text example that demonstrates how the app automatically wraps text to fit smartphone screens with proper padding for easy reading. Try adding more text to see how it handles longer content!</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="fontFamily">Font Family</label>
+                    <select id="fontFamily">
+                        <option value="Arial">Arial</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Comic Sans MS">Comic Sans MS</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fontSize">Font Size</label>
+                    <div class="range-group">
+                        <input type="range" id="fontSize" min="12" max="72" value="24">
+                        <span class="range-value" id="fontSizeValue">24px</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Colors</label>
+                    <div class="color-inputs">
+                        <div class="color-input-group">
+                            <input type="color" id="textColor" value="#000000">
+                            <label for="textColor">Text Color</label>
+                        </div>
+                        <div class="color-input-group">
+                            <input type="color" id="bgColor" value="#ffffff">
+                            <label for="bgColor">Background</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="textAlign">Text Alignment</label>
+                    <select id="textAlign">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Smart Sizing</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="smartSize" checked>
+                        <label for="smartSize">Auto-fit for smartphone (360px width)</label>
+                    </div>
+                    <div class="smart-size-info">
+                        When enabled, automatically sets optimal dimensions for mobile viewing with proper text padding.
+                    </div>
+                </div>
+
+                <div class="form-group" id="manualSizeGroup">
+                    <label for="canvasWidth">Canvas Width</label>
+                    <div class="range-group">
+                        <input type="range" id="canvasWidth" min="200" max="800" value="360">
+                        <span class="range-value" id="canvasWidthValue">360px</span>
+                    </div>
+                </div>
+
+                <div class="form-group" id="manualHeightGroup">
+                    <label for="canvasHeight">Canvas Height</label>
+                    <div class="range-group">
+                        <input type="range" id="canvasHeight" min="100" max="600" value="200">
+                        <span class="range-value" id="canvasHeightValue">200px</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Quick Presets</label>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="applyPreset('mobile')">Mobile</button>
+                        <button class="preset-btn" onclick="applyPreset('social')">Social Media</button>
+                        <button class="preset-btn" onclick="applyPreset('presentation')">Presentation</button>
+                        <button class="preset-btn" onclick="applyPreset('elegant')">Elegant</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <div class="canvas-container">
+                    <canvas id="textCanvas" width="360" height="200"></canvas>
+                </div>
+                <button class="download-btn" id="downloadBtn">Download Image</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
